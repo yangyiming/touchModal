@@ -16,7 +16,6 @@
       "src",
       "example",
       "Gruntfile.js",
-      "README.textile",
       "package.json",
       ".bowerrc"
   ],

@@ -4,11 +4,16 @@ i use the bootstrap modals CSS for modals and we can use this plugin in touch mo
 
 h2. how to use?
 
+we must to install zepto in the first:
+<pre>
+    bower install
+</pre>
+
 touch modal depends on Zepto. Include them both in end of your HTML code:
 
 <pre>
 
-    <script type="text/javascript" src="../src/zepto/zepto.min.js"></script>
+    <script type="text/javascript" src="../bower_components/zepto/zepto.min.js"></script>
     <script type="text/javascript" src="touch-modal.js"></script>
 </pre>
 
