@@ -67,3 +67,9 @@ js config:
                 }
             });
 </pre>
+
+h2. bower install
+
+<pre>
+    bower install touch-modals
+</pre>
