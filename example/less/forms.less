@@ -1,0 +1,23 @@
+@import "mixins";
+input {
+    line-height: 32px;
+    border: 1px solid #b0b0b0;
+    .box-shadow(1px 1px 1px 1px rgba(0,0,0,0.07) inset);
+    font-size: 16px;
+    border-radius: 6px;
+    text-indent: 10px;
+    background-color: #ffffff;
+    color: #666666;
+    .placeholder(#9b9b9b);
+    font-family: "microsoft yahei", arial;
+    &:focus,
+    &.focus {
+        border: 1px solid #000000;
+        .box-shadow(0px 0px 5px rgba(0,0,0,0.3));
+        outline: 0;
+    }
+    &.hint {
+        border-color: #ff1200;
+        .box-shadow(0px 0px 5px rgba(0,0,0,0.3));
+    }
+}

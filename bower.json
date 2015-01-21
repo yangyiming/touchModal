@@ -1,0 +1,26 @@
+{
+  "name": "touchModal",
+  "version": "0.0.1",
+  "authors": [
+    "yangyiming <529710127@qq.com>"
+  ],
+  "description": "you can use this plugin for image list show",
+  "main": "responsive-picture-show.js",
+  "license": "MIT",
+  "ignore": [
+      "**/.*",
+      "node_modules",
+      "bower_components",
+      "test",
+      "tests",
+      "src",
+      "example",
+      "Gruntfile.js",
+      "README.textile",
+      "package.json",
+      ".bowerrc"
+  ],
+  "dependencies": {
+    "zepto": ">=1.1.4"
+  }
+}

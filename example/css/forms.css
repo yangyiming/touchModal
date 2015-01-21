@@ -1,0 +1,37 @@
+/* Track */
+input {
+  line-height: 32px;
+  border: 1px solid #b0b0b0;
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.07) inset;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.07) inset;
+  font-size: 16px;
+  border-radius: 6px;
+  text-indent: 10px;
+  background-color: #ffffff;
+  color: #666666;
+  font-family: "microsoft yahei", arial;
+}
+input:-moz-placeholder {
+  color: #9b9b9b;
+}
+input::-moz-placeholder {
+  color: #9b9b9b;
+}
+input:-ms-input-placeholder {
+  color: #9b9b9b;
+}
+input::-webkit-input-placeholder {
+  color: #9b9b9b;
+}
+input:focus,
+input.focus {
+  border: 1px solid #000000;
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  outline: 0;
+}
+input.hint {
+  border-color: #ff1200;
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}

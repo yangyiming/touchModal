@@ -1,0 +1,64 @@
+h1. touch modal
+
+i use the bootstrap modals CSS for modals and we can use this plugin in touch mobile
+
+h2. how to use?
+
+touch modal depends on Zepto. Include them both in end of your HTML code:
+
+<pre>
+
+    <script type="text/javascript" src="../src/zepto/zepto.min.js"></script>
+    <script type="text/javascript" src="touch-modal.js"></script>
+</pre>
+
+ use the bootstrap modals:
+
+<pre>
+     <link rel="stylesheet" href="css/modals.css"/>
+</pre>
+
+html code:
+
+<pre>
+	<div class="modal" id="userFormModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span  class="close"></span>
+                    <h4 class="modal-title">礼品详情</h4>
+                </div>
+                <div class="modal-body" style="padding-top: 25px">
+                    <div class="box">
+                        ............
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" style="width: 50%">确定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+    <div class="modal-backdrop fade"></div>
+</pre>
+
+js config:
+
+<pre>
+ $("#userFormModal").modals({
+                //trigger method after open the modals
+                callBack:function(){
+
+                },
+                /trigger method before open the modals
+                before:function(element){
+
+                },
+                //"in": it's effect that modal show in page;
+                //"out": it's effect that modal hide in page;
+                effect:{
+                    in:"in",
+                    out:"fade"
+                }
+            });
+</pre>

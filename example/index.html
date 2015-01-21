@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/modals.css"/>
+    <script type="text/javascript" src="../bower_components/zepto/zepto.min.js"></script>
+    <script type="text/javascript" src="../touch-modal.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#userFormModal").modals({
+                callBack:function(){
+
+                },
+                before:function(element){
+                    var tapEvent  = "ontouchend" in document ? "tap" : "click";
+                    $(element).find(".btn-default").on(tapEvent,function(){
+                        $("#userFormModal").trigger("close");
+                    });
+                }
+            });
+            $("#comfirmUser").on("click",function(){
+                $("#userFormModal").trigger("open");
+            })
+        })
+    </script>
+</head>
+<body>
+<button type="button" class="btn btn-default" id="comfirmUser" style="width: 200px">弹窗</button>
+<div class="modal" id="userFormModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span  class="close"></span>
+                <h4 class="modal-title">礼品详情</h4>
+            </div>
+            <div class="modal-body" style="padding-top: 25px">
+                <div class="box">
+                    <form action="">
+                        <div class="user-form">
+                            <div class="input-box">
+                                <input type="text" value="" placeholder="收件人" class="hint"/>
+                            </div>
+                            <div class="input-box" >
+                                <input type="text" value="" placeholder="联系电话"/>
+                            </div>
+                            <div class="input-box">
+                                <input type="text" value="" placeholder="收货地址"/>
+                            </div>
+                            <div class="input-box" >
+                                <input type="text" value="" placeholder="备注"/>
+                            </div>
+                        </div>
+                    </form>
+                    <p style="padding: 0px 10px 25px">
+                        请确保以上联系方式真实有效，否则奖品
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" style="width: 50%">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<div class="modal-backdrop fade"></div>
+</body>
+</html>

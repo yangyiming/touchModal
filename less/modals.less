@@ -1,0 +1,288 @@
+//
+// Modals
+// --------------------------------------------------
+
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and shit
+
+// Kill the scroll on the body
+@import "mixins";
+@import "buttons";
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity 0.15s linear;
+    transition: opacity 0.15s linear;
+}
+.fade.in {
+    opacity: 1;
+}
+.modal-open {
+  overflow: hidden;
+}
+
+// Container that the modal scrolls within
+.modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  -webkit-overflow-scrolling: touch;
+
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+
+  // When fading in the modal, animate it to slide down
+  &.fade .modal-dialog {
+    .translate(0, -25%);
+    .transition-transform(~"0.3s ease-out");
+  }
+  &.in .modal-dialog { .translate(0, 0) }
+}
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  position: absolute;
+  width: auto;
+  padding: 20px;
+   top: 50%;
+    width: 100%;
+    max-height: 100%;
+    #box .box(vertical);
+}
+
+// Actual modal
+.modal-content {
+  position: relative;
+  background-color: #efefef;
+  border-radius: 6px;
+  .box-shadow(0 3px 9px rgba(0,0,0,.5));
+  background-clip: padding-box;
+  // Remove focus outline from opened modal
+  outline: 0;
+    #box .box(vertical);
+    #box .flex();
+}
+form {
+    width: 100%;
+}
+// Modal background
+.modal-backdrop {
+    display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+    z-index: 998;
+  // Fade for backdrop
+  &.fade { .opacity(0); }
+  &.in { .opacity(0.5); }
+}
+
+// Modal header
+// Top section of the modal w/ title and dismiss
+.modal-header {
+  padding: 11px 15px;
+    text-align: center;
+    background-color: #ffffff;
+    .border-top-radius(6px);
+}
+// Close icon
+.modal-header .close {
+//  margin-top: -2px;
+}
+
+// Title text within header
+.modal-title {
+  margin: 0;
+    font-size: 17px;
+}
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body {
+  position: relative;
+  padding: 15px;
+    border-top: 1px solid #cccccc;
+    font-size: 12px;
+    .box-shadow(1px 3px 5px -1px rgba(0,0,0,0.075) inset);
+    #box .flex(1);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+// Footer (for actions)
+.modal-footer {
+    padding: 9px 7px;
+  text-align: center; // right align buttons
+  border-top: 1px solid #bfbfbf;
+
+  // Properly space out buttons
+  .btn + .btn {
+//    margin-left: 5px;
+    margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
+  }
+  // but override that for button groups
+  .btn-group .btn + .btn {
+    margin-left: -1px;
+  }
+  // and override it for block buttons as well
+  .btn-block + .btn-block {
+    margin-left: 0;
+  }
+}
+
+// Measure scrollbar width for padding body during modal show/hide
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+.close {
+    .size(24px,24px);
+    background-size: contain;
+    background-image: url("../images/btn-close-gray@2x.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: block;
+    position: absolute;
+}
+.modal-body {
+    .box {
+        padding: 0px 8px;
+    }
+    .item-list-module {
+        margin-top: 0px!important;
+        border: none;
+        background-color: transparent;
+        border-bottom: 1px solid #bfbfbf;
+        border-radius: 0px;
+        padding: 0px 5px 10px;
+        .box-shadow(none);
+        .name {
+            height: auto;
+            .gray {
+                font-weight: normal;
+                white-space: nowrap;
+                font-size: 10px;
+            }
+        }
+    }
+    p {
+        padding-top: 9px;
+        line-height: 20px;
+        color: #4a4a4a;
+        font-size: 12px;
+    }
+    .alert-Text {
+        padding: 20px 10px 20px;
+        font-size: 16px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .info {
+        display: table;
+        width: 100%;
+        padding: 5px 0px;
+        .row {
+            display: table-row;
+            .orange {
+                font-size: 14px;
+            }
+            .btn {
+                font-size: 10px;
+                padding: 0px 6px;
+                height: auto;
+            }
+        }
+        .col {
+            display: table-cell;
+            padding: 3px 0px;
+        }
+    }
+
+}
+
+.user-form {
+    display: table;
+    width: 100%;
+
+    .input-box {
+        display: block;
+        margin-bottom: 10px;
+        input {
+            width: 100%;
+        }
+    }
+}
+.congratulation {
+    background-image: url("../images/pop@2x.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    height: 231px;
+    margin: auto;
+    font-size: 14px;
+    position: relative;
+    text-align: center;
+    .box {
+        padding-top: 62px;
+    }
+    .title {
+        background-image: url("../images/pop-title@2x.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        width: 204px;
+        height: 40px;
+        margin:auto;
+        color: #ffffff;
+        padding-top: 3px;
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 10px;
+        position: relative;
+        margin-top: 15px;
+        .close {
+            left: -34px;
+            top: 0px;
+            background-image: url("../images/btn-close-white@2x.png");
+        }
+    }
+    p {
+        line-height: 25px;
+       strong {
+           color: #ffffff;
+       }
+    }
+    .btn-white {
+        margin-top: 10px;
+        width: 130px;
+        &:hover {
+            color: #bf2d2d;
+        }
+    }
+}
+.wifi {
+    padding: 20px;
+    margin: auto;
+    color: #ffffff;
+    font-size: 14px;
+    background-color: #333333;
+    border-radius: 6px;
+    margin: 0px 30px;
+}
