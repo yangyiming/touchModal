@@ -11,24 +11,31 @@
     <script type="text/javascript">
         $(function(){
             $("#userFormModal").modals({
-                callBack:function(){
+                callBack:function(element,data){
 
                 },
-                before:function(element){
+                before:function(element,data){
                     var tapEvent  = "ontouchend" in document ? "tap" : "click";
                     $(element).find(".btn-default").on(tapEvent,function(){
                         $("#userFormModal").trigger("close");
                     });
+                    if(data){
+                        alert(data.message);
+                    }
                 }
             });
             $("#comfirmUser").on("click",function(){
                 $("#userFormModal").trigger("open");
+            })
+            $("#close").on("click",function(){
+                $("#userFormModal").trigger("open",[{message:"thank you"}]);
             })
         })
     </script>
 </head>
 <body>
 <button type="button" class="btn btn-default" id="comfirmUser" style="width: 200px">弹窗</button>
+<button type="button" class="btn btn-default" id="close" style="width: 200px">传递数据</button>
 <div class="modal" id="userFormModal">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -60,7 +67,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" style="width: 50%">确定</button>
+                <button type="button" class="btn btn-default" style="width: 50%">关闭弹窗</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

@@ -52,11 +52,13 @@ js config:
 <pre>
  $("#userFormModal").modals({
                 //trigger method after open the modals
-                callBack:function(){
+                //element:modal element
+                //data: you can Pass the dynamic data
+                callBack:function(element,data){
 
                 },
                 /trigger method before open the modals
-                before:function(element){
+                before:function(element,data){
 
                 },
                 //"in": it's effect that modal show in page;
@@ -68,6 +70,14 @@ js config:
             });
 </pre>
 
+if you init this plugin,you can use trigger method for something;
+
+<pre>
+      //open the modal
+       $("#userFormModal").trigger("open",[{}]);
+       //open the modal
+       $("#userFormModal").trigger("close",[{}]);
+</pre>
 h2. bower install
 
 <pre>
